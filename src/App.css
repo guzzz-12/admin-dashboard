@@ -1,0 +1,21 @@
+body {
+  margin: 0;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.inner-wrapper {
+  width: 100%;
+  max-width: 1300px;
+  margin: 0 auto;
+  border-right: 1px solid lightgrey;
+}
+
+.custom-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: #a0a0a0;
+}
