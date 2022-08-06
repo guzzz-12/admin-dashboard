@@ -54,7 +54,8 @@
   cursor: default;
 }
 
-.sidebar .MuiAccordion-root {
+.sidebar .MuiAccordion-root,
+.sidebar--mobile .MuiAccordion-root {
   box-shadow: none;
 }
 
