@@ -2,6 +2,7 @@ import {useEffect, useRef, MutableRefObject} from "react";
 import {useDispatch} from "react-redux";
 import {Box, Typography} from "@mui/material";
 import SidebarAccordions from "./SidebarAccordions";
+import SidebarDrawer from "./SidebarDrawer";
 import useResizeObserver from "../../hooks/useResizeObserver";
 import {setSidebarWidth} from "../../redux/features/layoutSlice";
 import "./sidebar.scss";
@@ -27,26 +28,29 @@ const Sidebar = ({navbarHeight, leftOffset}: SidebarProps) => {
   }, [sidebarWidth]);
 
   return (
-    <aside
-      ref={sidebarRef}
-      style={{left: `${leftOffset}px`}}
-      className="sidebar"
-    >
-      <Box
-        sx={{height: `${navbarHeight}px`}}
-        className="sidebar__logo-wrapper"
+    <>
+      <SidebarDrawer />
+      <aside
+        ref={sidebarRef}
+        style={{left: `${leftOffset}px`}}
+        className="sidebar"
       >
-        <Typography variant="h4" className="sidebar__logo">
-          Logo
-        </Typography>
-      </Box>
-      <Box className="sidebar__list-wrapper">
-        {SidebarAccordions()}
-      </Box>
-      <Box className="sidebar__bottom">
-        <Typography>Theme switch</Typography>
-      </Box>
-    </aside>
+        <Box
+          sx={{height: `${navbarHeight}px`}}
+          className="sidebar__logo-wrapper"
+        >
+          <Typography variant="h4" className="sidebar__logo">
+            Logo
+          </Typography>
+        </Box>
+        <Box className="sidebar__list-wrapper">
+          {SidebarAccordions()}
+        </Box>
+        <Box className="sidebar__bottom">
+          <Typography>Theme switch</Typography>
+        </Box>
+      </aside>
+    </>
   )
 }
 

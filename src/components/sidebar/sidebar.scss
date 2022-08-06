@@ -73,3 +73,30 @@
     border-top: 1px solid rgba(0,0,0,0.25);
   }
 }
+
+.sidebar--mobile {
+  display: none;
+}
+
+@media screen and (max-width: 900px) {
+  .sidebar {
+    display: none;
+  }
+
+  .sidebar--mobile {
+    display: block;
+    min-width: 240px;
+
+    .sidebar__logo-wrapper {
+      position: relative;
+      padding: 10px 1rem;
+    }
+
+    .sidebar--mobile__close-btn {
+      position: absolute;
+      top: 3px;
+      right: 3px;
+      z-index: 10;
+    }
+  }
+}
