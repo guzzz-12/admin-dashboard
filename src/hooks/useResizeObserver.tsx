@@ -1,4 +1,4 @@
-import { useEffect, useState, MutableRefObject } from "react";
+import { useEffect, useState, MutableRefObject, useMemo } from "react";
 
 interface ObserverProps {
   elementRef: MutableRefObject<HTMLElement>
@@ -17,13 +17,15 @@ const UseResizeObserver = ({elementRef}: ObserverProps): Dimentions => {
     elemHeight: 0
   });
 
-  const resizeObserver = new ResizeObserver((entries) => {
+  // Resize observer del elemento referenciado
+  const resizeObserver = useMemo(() => new ResizeObserver((entries) => {
     setDimentions({
       elemWidth: (entries[0].target as HTMLElement).offsetWidth,
       elemHeight: (entries[0].target as HTMLElement).offsetHeight
     });
-  });
+  }), [elementRef]);
 
+  // Inicializar el resize observer del elemento
   useEffect(() => {
     const element = elementRef.current as HTMLElement;
     resizeObserver.observe(element);

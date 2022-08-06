@@ -1,4 +1,4 @@
-import {useRef, useEffect, useState, ReactNode} from "react";
+import {useRef, useEffect, useState, ReactNode, useMemo} from "react";
 import {useSelector} from "react-redux";
 import {Box} from "@mui/material";
 import {LayoutState} from "../redux/store";
@@ -22,13 +22,13 @@ const Layout = ({children}: LayoutProps) => {
 
   // Calcular la posición del contenedor interno con respecto al contenedor externo
   // cuando el contenedor externo cambie de tamaño
-  const resizeObserver = new ResizeObserver(() => {
+  const resizeObserver = useMemo(() => new ResizeObserver(() => {
     const {left, right} = (innerWrapperRef.current as HTMLDivElement)
     .getBoundingClientRect();
 
     // Actualizar el state de la posición del contenedor interno
     setOffset({left, right});
-  });
+  }), [innerWrapperRef]);
 
   // Inicializar el observer
   useEffect(() => {
