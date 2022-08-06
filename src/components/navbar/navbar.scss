@@ -15,6 +15,21 @@
     background-color: white;
   }
 
+  &__left {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  &__open-drawer-btn {
+    display: none;
+  }
+  
+  &__logo {
+    display: none;
+  }
+
   &__items {
     display: flex;
     justify-content: space-between;
@@ -25,4 +40,15 @@
   // &__icon-btn {
   //   border: 1px solid #eeeded
   // }
+}
+
+@media screen and (max-width: 900px) {
+  .navbar__open-drawer-btn {
+    display: flex;
+    align-items: center;
+  }
+
+  .navbar__logo {
+    display: block;
+  }
 }

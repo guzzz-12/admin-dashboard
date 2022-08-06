@@ -1,10 +1,12 @@
 import {useEffect, useState, useRef, MutableRefObject} from "react";
 import {useDispatch} from "react-redux";
-import {Box, Typography} from "@mui/material";
+import {Box, Typography, IconButton} from "@mui/material";
+import {AiOutlineMenu} from "react-icons/ai";
 import SearchInput from "./SearchInput";
 import NavbarItems from "./NavbarItems";
 import useResizeObserver from "../../hooks/useResizeObserver";
 import {setNavbarHeight} from "../../redux/features/layoutSlice";
+import {setOpenDrawer} from "../../redux/features/drawerSlice";
 import "./navbar.scss";
 
 interface NavbarProps {
@@ -39,10 +41,23 @@ const Navbar = ({sidebarWidth, leftOffset}: NavbarProps) => {
         style={{marginLeft: `calc(${sidebarWidth}px + ${leftOffset}px)`}}
         className="navbar__content"
       >
-        <SearchInput
-          searchTerm={searchTerm}
-          setSearchTerm={setSearchTerm}
-        />
+        <Box className="navbar__left">
+          <IconButton
+            className="navbar__open-drawer-btn"
+            onClick={() => dispatch(setOpenDrawer(true))}
+          >
+            <AiOutlineMenu />
+          </IconButton>
+          <Box className="navbar__logo">
+            <Typography variant="h4">
+              Logo
+            </Typography>
+          </Box>
+          <SearchInput
+            searchTerm={searchTerm}
+            setSearchTerm={setSearchTerm}
+          />
+        </Box>
         <NavbarItems />
       </Box>
     </nav>
