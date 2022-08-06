@@ -1,3 +1,22 @@
+:root {
+  --heading-1: 4.209rem;
+  --heading-2: 3.157rem;
+  --heading-3: 2.369rem;
+  --heading-4: 1.777rem;
+  --heading-5: 1.333rem;
+  --paragraph: 1rem;
+  
+  --line-height: 1.5;
+  --baseline: calc(var(--paragraph) * var(--line-height));
+  --spacing: calc(var(--baseline) * 0.5);
+  --spacing-sm: calc(0.75 * var(--spacing));
+  --spacing-lg: calc(1.5 * var(--spacing));
+}
+
+html {
+  font-size: 16px;
+}
+
 body {
   margin: 0;
 }
@@ -10,7 +29,7 @@ body {
 
 .inner-wrapper {
   width: 100%;
-  max-width: 1300px;
+  max-width: 1440px;
   margin: 0 auto;
   border-right: 1px solid lightgrey;
 }

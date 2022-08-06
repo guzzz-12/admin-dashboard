@@ -1,4 +1,4 @@
-import "./list.scss";
+import "./list.css";
 
 const ListPage = () => {
   return (

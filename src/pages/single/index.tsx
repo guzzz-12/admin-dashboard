@@ -1,4 +1,4 @@
-import "./single.scss";
+import "./single.css";
 
 const SinglePage = () => {
   return (

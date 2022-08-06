@@ -12,11 +12,13 @@ const SingleItemPage = lazy(() => import("./pages/single"));
 
 const theme = createTheme({
   typography: {
-    // h1: {fontSize: "var(--heading-1)"},
-    // h2: {fontSize: "var(--heading-2)"},
-    // h3: {fontSize: "var(--heading-3)"},
-    // h4: {fontSize: "var(--heading-4)"},
-    // h5: {fontSize: "var(--heading-5)"},
+    h1: {fontSize: "var(--heading-1)"},
+    h2: {fontSize: "var(--heading-2)"},
+    h3: {fontSize: "var(--heading-3)"},
+    h4: {fontSize: "var(--heading-4)"},
+    h5: {fontSize: "var(--heading-5)"},
+    body1: {fontSize: "var(--paragraph)"},
+    button: {fontSize: "var(--paragraph)"},
     allVariants: {
       fontFamily: "Nunito, sans-serif"
     }

@@ -7,7 +7,7 @@ import NavbarItems from "./NavbarItems";
 import useResizeObserver from "../../hooks/useResizeObserver";
 import {setNavbarHeight} from "../../redux/features/layoutSlice";
 import {setOpenDrawer} from "../../redux/features/drawerSlice";
-import "./navbar.scss";
+import "./navbar.css";
 
 interface NavbarProps {
   sidebarWidth: number;

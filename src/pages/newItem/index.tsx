@@ -1,4 +1,4 @@
-import "./newItem.scss";
+import "./newItem.css";
 
 const NewItemPage = () => {
   return (

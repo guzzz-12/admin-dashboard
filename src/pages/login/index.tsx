@@ -1,6 +1,6 @@
 import {Box, Typography } from "@mui/material";
 import Layout from "../../components/Layout";
-import "./login.scss";
+import "./login.css";
 
 const LoginPage = () => {
   return (

@@ -1,6 +1,6 @@
 import { Typography } from "@mui/material";
 import Layout from "../../components/Layout";
-import "./home.scss";
+import "./home.css";
 
 const HomePage = () => {
   return (

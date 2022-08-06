@@ -5,7 +5,7 @@ import SidebarAccordions from "./SidebarAccordions";
 import SidebarDrawer from "./SidebarDrawer";
 import useResizeObserver from "../../hooks/useResizeObserver";
 import {setSidebarWidth} from "../../redux/features/layoutSlice";
-import "./sidebar.scss";
+import "./sidebar.css";
 
 interface SidebarProps {
   navbarHeight: number;
