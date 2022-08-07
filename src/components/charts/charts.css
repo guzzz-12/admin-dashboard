@@ -1,0 +1,59 @@
+.chart {
+  flex-basis: 70%;
+  padding: var(--spacing);
+  box-shadow: var(--card-shadow);
+  border: var(--card-border);
+}
+
+/*----------------------------*/
+/* Estilos del featured chart */
+/*----------------------------*/
+.featured-chart {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: var(--spacing-lg);
+  flex-basis: 30%;
+  padding: var(--spacing);
+  box-shadow: var(--card-shadow);
+  border: var(--card-border);
+}
+
+.featured-chart__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.featured-chart__progress {
+  position: relative;
+  width: 12rem;
+  height: 12rem;
+}
+
+.featured-chart__progress-info,
+.featured-chart__progress-desc {
+  text-align: center;
+}
+
+.featured-chart__progress-desc {
+  line-height: 1;
+  opacity: 0.75;
+  color: red;
+}
+
+.featured-chart__targets {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.featured-chart__target {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
