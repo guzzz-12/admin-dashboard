@@ -19,14 +19,7 @@ export const WIDGETS_DATA: WidgetData[] = [
   {
     type: "order",
     title: "orders",
-    counter: 15,
-    isMoney: false,
-    link: "See all orders"
-  },
-  {
-    type: "order",
-    title: "orders",
-    counter: 33,
+    counter: 75,
     isMoney: false,
     link: "See all orders"
   },
@@ -40,36 +33,8 @@ export const WIDGETS_DATA: WidgetData[] = [
   {
     type: "balance",
     title: "balance",
-    counter: 800,
+    counter: 15800,
     isMoney: true,
     link: "View net balance"
-  },
-  {
-    type: "user",
-    title: "users",
-    counter: 150,
-    isMoney: false,
-    link: "View all users"
-  },
-  {
-    type: "balance",
-    title: "balance",
-    counter: 3500,
-    isMoney: true,
-    link: "View net balance"
-  },
-  {
-    type: "balance",
-    title: "balance",
-    counter: 240,
-    isMoney: true,
-    link: "View net balance"
-  },
-  {
-    type: "user",
-    title: "users",
-    counter: 580,
-    isMoney: false,
-    link: "View all users"
   }
 ]

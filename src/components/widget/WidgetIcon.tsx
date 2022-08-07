@@ -1,3 +1,4 @@
+import {useEffect, useState} from "react";
 import {Box} from "@mui/system";
 import {FaRegUser} from "react-icons/fa";
 import {BsCart} from "react-icons/bs";
@@ -9,8 +10,27 @@ interface WidgetIconProps {
 }
 
 const WidgetIcon = ({type}: WidgetIconProps) => {
+  const [bgColor, setBgColor] = useState<string>("transparent");
+
+  useEffect(() => {
+    switch(type) {
+      case "user":
+        setBgColor("rgba(100, 148, 237, 0.3)");
+        break;        
+      case "order":
+        setBgColor("rgba(255, 218, 7, 0.3)");
+        break;        
+      case "earnings":
+      case "balance":
+        setBgColor("rgba(0, 128, 0, 0.3)");
+        break;
+      default:
+        setBgColor("transparent")       
+    }
+  }, [type]);
+
   const Icon = () => {
-    switch (type) {
+    switch(type) {
       case "user":
         return <FaRegUser />
       case "order":
@@ -24,7 +44,10 @@ const WidgetIcon = ({type}: WidgetIconProps) => {
   }
 
   return (
-    <Box className="widget__icon">
+    <Box
+      style={{backgroundColor: bgColor}}
+      className="widget__footer__icon"
+    >
       {Icon()}
     </Box>
   )

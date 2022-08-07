@@ -38,7 +38,7 @@
 .widget__footer {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: baseline;
 }
 
 .widget__footer__link {
@@ -47,3 +47,12 @@
   color: cornflowerblue;
   cursor: pointer;
 }
+
+.widget__footer__icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+  border-radius: 3px;
+  border: 1px solid rgba(0,0,0,0.1)
+;}
