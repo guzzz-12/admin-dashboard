@@ -1,8 +1,18 @@
 .chart {
-  flex-basis: 70%;
+  position: relative;
+  flex-grow: 1;
   padding: var(--spacing);
   box-shadow: var(--card-shadow);
   border: var(--card-border);
+  overflow: hidden;
+}
+
+.chart__title {
+  position: absolute;
+  top: var(--spacing-sm);
+  left: 0;
+  width: 100%;
+  text-align: center;
 }
 
 /*----------------------------*/
