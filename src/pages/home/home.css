@@ -9,4 +9,10 @@
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: var(--spacing-lg);
   width: 100%;
+  margin-bottom: var(--spacing-lg);
+}
+
+.home__charts {
+  display: flex;
+  gap: var(--spacing-lg);
 }
