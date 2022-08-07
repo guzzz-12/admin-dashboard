@@ -32,12 +32,12 @@ const WidgetIcon = ({type}: WidgetIconProps) => {
   const Icon = () => {
     switch(type) {
       case "user":
-        return <FaRegUser />
+        return <FaRegUser color="blue" />
       case "order":
-        return <BsCart />
+        return <BsCart color="#a08802" />
       case "earnings":
       case "balance":
-        return <MdOutlineMonetizationOn />
+        return <MdOutlineMonetizationOn color="green" />
       default:
         return null;
     }
