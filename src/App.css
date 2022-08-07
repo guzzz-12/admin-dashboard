@@ -13,6 +13,8 @@
   --spacing-sm: calc(0.75 * var(--spacing));
   --spacing-lg: calc(1.5 * var(--spacing));
 
+  --scrollbar-color: #bbbbbb;
+
   --card-shadow: 3px 3px 3px rgba(0,0,0,0.25);
   --card-border: 1px solid rgba(0,0,0,0.05);
 }
@@ -40,5 +42,5 @@ body {
 
 .custom-scrollbar {
   scrollbar-width: thin;
-  scrollbar-color: #a0a0a0;
+  scrollbar-color: var(--scrollbar-color);
 }

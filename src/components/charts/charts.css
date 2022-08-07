@@ -14,7 +14,7 @@
   justify-content: flex-start;
   align-items: center;
   gap: var(--spacing-lg);
-  flex-basis: 30%;
+  flex-shrink: 0;
   padding: var(--spacing);
   box-shadow: var(--card-shadow);
   border: var(--card-border);

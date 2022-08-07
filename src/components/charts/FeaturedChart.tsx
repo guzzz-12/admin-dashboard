@@ -1,5 +1,5 @@
 import {Box, Typography, IconButton} from "@mui/material";
-import {BsThreeDotsVertical, BsChevronDown} from "react-icons/bs";
+import {BsThreeDotsVertical} from "react-icons/bs";
 import {CircularProgressbarWithChildren, buildStyles} from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
 import "./charts.css";
