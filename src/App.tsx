@@ -19,6 +19,7 @@ const theme = createTheme({
     h5: {fontSize: "var(--heading-5)"},
     body1: {fontSize: "var(--paragraph)"},
     button: {fontSize: "var(--paragraph)"},
+    subtitle1: {fontSize: "var(--text-small)"},
     allVariants: {
       fontFamily: "Nunito, sans-serif"
     }

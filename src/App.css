@@ -5,6 +5,7 @@
   --heading-4: 1.777rem;
   --heading-5: 1.333rem;
   --paragraph: 1rem;
+  --text-small: 0.75rem; 
   
   --line-height: 1.5;
   --baseline: calc(var(--paragraph) * var(--line-height));

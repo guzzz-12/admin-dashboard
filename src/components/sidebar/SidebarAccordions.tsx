@@ -71,7 +71,7 @@ const SidebarAccordions = () => {
             {item.links.map(({text, Icon}, i) => {
               return (
                 <li key={i} className="sidebar__link">
-                  <Icon fontSize="18px" />
+                  <Icon fontSize="18px" color="cornflowerblue" />
                   <Typography variant="body1">
                     {text}
                   </Typography>
