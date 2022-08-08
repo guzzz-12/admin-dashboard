@@ -1,5 +1,7 @@
+import {v4 as uuid} from "uuid";
+
 export interface UserData {
-  id: number;
+  id: string;
   username: string;
   img: string;
   status: "active" | "passive" | "pending";
@@ -9,7 +11,7 @@ export interface UserData {
 
 export const usersTableRows: UserData[] = [
   {
-    id: 1,
+    id: uuid(),
     username: "Snow",
     img: "https://images.pexels.com/photos/1820770/pexels-photo-1820770.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
     status: "active",
@@ -17,7 +19,7 @@ export const usersTableRows: UserData[] = [
     age: 35,
   },
   {
-    id: 2,
+    id: uuid(),
     username: "Jamie Lannister",
     img: "https://images.pexels.com/photos/1820770/pexels-photo-1820770.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
     email: "2snow@gmail.com",
@@ -25,7 +27,7 @@ export const usersTableRows: UserData[] = [
     age: 42,
   },
   {
-    id: 3,
+    id: uuid(),
     username: "Lannister",
     img: "https://images.pexels.com/photos/1820770/pexels-photo-1820770.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
     email: "3snow@gmail.com",
@@ -33,7 +35,7 @@ export const usersTableRows: UserData[] = [
     age: 45,
   },
   {
-    id: 4,
+    id: uuid(),
     username: "Stark",
     img: "https://images.pexels.com/photos/1820770/pexels-photo-1820770.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
     email: "4snow@gmail.com",
@@ -41,7 +43,7 @@ export const usersTableRows: UserData[] = [
     age: 16,
   },
   {
-    id: 5,
+    id: uuid(),
     username: "Targaryen",
     img: "https://images.pexels.com/photos/1820770/pexels-photo-1820770.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
     email: "5snow@gmail.com",
@@ -49,7 +51,7 @@ export const usersTableRows: UserData[] = [
     age: 22,
   },
   {
-    id: 6,
+    id: uuid(),
     username: "Melisandre",
     img: "https://images.pexels.com/photos/1820770/pexels-photo-1820770.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
     email: "6snow@gmail.com",
@@ -57,7 +59,7 @@ export const usersTableRows: UserData[] = [
     age: 15,
   },
   {
-    id: 7,
+    id: uuid(),
     username: "Clifford",
     img: "https://images.pexels.com/photos/1820770/pexels-photo-1820770.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
     email: "7snow@gmail.com",
@@ -65,7 +67,7 @@ export const usersTableRows: UserData[] = [
     age: 44,
   },
   {
-    id: 8,
+    id: uuid(),
     username: "Frances",
     img: "https://images.pexels.com/photos/1820770/pexels-photo-1820770.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
     email: "8snow@gmail.com",
@@ -73,19 +75,11 @@ export const usersTableRows: UserData[] = [
     age: 36,
   },
   {
-    id: 9,
+    id: uuid(),
     username: "Roxie",
     img: "https://images.pexels.com/photos/1820770/pexels-photo-1820770.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
     email: "snow@gmail.com",
     status: "pending",
     age: 65,
-  },
-  {
-    id: 10,
-    username: "Roxie",
-    img: "https://images.pexels.com/photos/1820770/pexels-photo-1820770.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
-    email: "snow@gmail.com",
-    status: "active",
-    age: 65,
-  },
+  }
 ];
