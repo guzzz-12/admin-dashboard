@@ -20,23 +20,32 @@ const Layout = ({children}: LayoutProps) => {
     right: 0
   });
 
+
   // Calcular la posición del contenedor interno con respecto al contenedor externo
   // cuando el contenedor externo cambie de tamaño
   const resizeObserver = useMemo(() => new ResizeObserver(() => {
-    const {left, right} = (innerWrapperRef.current as HTMLDivElement)
-    .getBoundingClientRect();
-
-    // Actualizar el state de la posición del contenedor interno
-    setOffset({left, right});
+    if(innerWrapperRef.current) {
+      const {left, right} = (innerWrapperRef.current as HTMLDivElement)
+      .getBoundingClientRect();
+      
+      // Actualizar el state de la posición del contenedor interno
+      setOffset({left, right});
+    }
   }), [innerWrapperRef]);
 
+
+  /*--------------------------*/
   // Inicializar el observer
+  /*--------------------------*/
   useEffect(() => {
     const element = wrapperRef.current as HTMLDivElement;
-    resizeObserver.observe(element);
+
+    if(element) {
+      resizeObserver.observe(element);
+    }
 
     () => resizeObserver.unobserve(element);
-  }, [wrapperRef.current]);
+  }, [wrapperRef]);
 
   return (
     <Box
