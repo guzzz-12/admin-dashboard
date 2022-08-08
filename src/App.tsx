@@ -1,6 +1,7 @@
 import {Suspense, lazy} from "react";
 import {Routes, Route} from "react-router-dom";
 import {createTheme, ThemeProvider} from "@mui/material";
+import Spinner from "./components/Spinner";
 import "./App.css";
 
 const HomePage = lazy(() => import("./pages/home"));
@@ -30,7 +31,7 @@ const theme = createTheme({
 const App = () => {
   return (
     <ThemeProvider theme={theme}>
-      <Suspense fallback={<h5>Loading...</h5>}>
+      <Suspense fallback={<Spinner />}>
         <Routes>
           <Route path="/" element={<HomePage />}/>
           <Route path="/login" element={<LoginPage />}/>
