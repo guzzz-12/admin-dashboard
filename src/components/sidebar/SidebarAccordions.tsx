@@ -1,4 +1,5 @@
 import {useState} from "react";
+import {Link} from "react-router-dom";
 import {Accordion, AccordionDetails, AccordionSummary, Typography} from "@mui/material";
 import {AiOutlineBarChart, AiOutlineBell, AiOutlineCreditCard, AiOutlineDashboard, AiOutlineUser, AiOutlineLogout} from "react-icons/ai";
 import {HiOutlineTruck, HiTemplate} from "react-icons/hi";
@@ -11,8 +12,8 @@ const SidebarAccordions = () => {
   const content = [
     {title: "main", links: [{text: "Dashboard", path: "/", Icon: AiOutlineDashboard}]},
     {title: "lists", links: [
-      {text: "Users", path: "/", Icon: AiOutlineUser},
-      {text: "Products", path: "/", Icon: HiTemplate},
+      {text: "Users", path: "/users", Icon: AiOutlineUser},
+      {text: "Products", path: "/products", Icon: HiTemplate},
       {text: "Orders", path: "/", Icon: AiOutlineCreditCard},
       {text: "Delivery", path: "/", Icon: HiOutlineTruck}
     ]},
@@ -68,13 +69,15 @@ const SidebarAccordions = () => {
         </AccordionSummary>
         <AccordionDetails className="sidebar__accordion-details">
           <ul className="sidebar__list">
-            {item.links.map(({text, Icon}, i) => {
+            {item.links.map(({text, path, Icon}, i) => {
               return (
-                <li key={i} className="sidebar__link">
-                  <Icon fontSize="18px" color="cornflowerblue" />
-                  <Typography variant="body1">
-                    {text}
-                  </Typography>
+                <li key={i}>
+                  <Link className="sidebar__link" to={path}>
+                    <Icon fontSize="18px" color="cornflowerblue" />
+                    <Typography variant="body1">
+                      {text}
+                    </Typography>
+                  </Link>
                 </li>
               )
             })}            

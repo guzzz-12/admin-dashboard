@@ -32,19 +32,24 @@
   background-color: var(--scrollbar-color);
 }
 
-.sidebar__list-wrapper li {
+.sidebar__list li {
+  list-style: none;
+  cursor: pointer;
+  transition: all 200ms;
+}
+
+.sidebar__list li:hover {
+  background-color: #ecf3f5;
+}
+
+.sidebar__list a {
   display: flex;
   justify-content: flex-start;
   align-items: center;
   gap: var(--spacing-sm);
   padding: var(--spacing-sm);
-  cursor: pointer;
-  transition: all 200ms;
-
-}
-
-.sidebar__list-wrapper li:hover {
-  background-color: #ecf3f5;
+  text-decoration: none;
+  color: inherit;
 }
 
 .sidebar__accordion-title {
