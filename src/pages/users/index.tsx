@@ -1,12 +1,11 @@
-import {Box, Typography} from "@mui/material";
+import {Box} from "@mui/material";
+import UsersTable from "../../components/usersTable";
 import "./users.css";
 
 const UsersPage = () => {
   return (
     <Box className="users">
-      <Typography>
-        Users Page
-      </Typography>
+      <UsersTable />
     </Box>
   )
 }
