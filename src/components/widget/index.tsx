@@ -1,4 +1,4 @@
-import {Box, Typography} from "@mui/material";
+import {Box, Typography, Link as MuiLink} from "@mui/material";
 import {BsChevronUp} from "react-icons/bs";
 import WidgetIcon from "./WidgetIcon";
 import {WidgetData} from "./widgetData";
@@ -29,12 +29,13 @@ const Widget = ({widgetData}: WidgetProps) => {
       </Box>
 
       <Box className="widget__footer">
-        <Typography
+        <MuiLink
           className="widget__footer__link"
-          variant="subtitle1"
+          href="#"
+          variant="body1"
         >
           {widgetData.link}
-        </Typography>
+        </MuiLink>
         <Typography variant="h5">
           <WidgetIcon type={widgetData.type} />
         </Typography>
