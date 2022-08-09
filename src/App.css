@@ -45,3 +45,9 @@ body {
   scrollbar-width: thin;
   scrollbar-color: var(--scrollbar-color);
 }
+
+.overflow-ellipsis {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
