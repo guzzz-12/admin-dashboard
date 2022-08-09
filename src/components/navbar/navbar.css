@@ -43,11 +43,24 @@
   color: var(--text-color);
 }
 
+.navbar__items-wrapper {
+  display: block;
+}
+
 .navbar__items {
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: var(--spacing-sm);
+}
+
+.navbar__items-mobile-options-btn {
+  display: none;
+}
+
+.navbar__items-mobile-options-menu .MuiPopover-paper {
+  background-color: var(--bg-color);
+  border: 1px solid lightgray;
 }
 
 .navbar__icon-btn {
@@ -62,5 +75,16 @@
 
   .navbar__logo {
     display: block;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .navbar__items-wrapper {
+    display: none;
+  }
+
+  .navbar__items-mobile-options-btn {
+    display: block;
+    color: var(--text-color);
   }
 }
