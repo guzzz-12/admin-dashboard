@@ -5,12 +5,12 @@ import Spinner from "./components/Spinner";
 import "./App.css";
 
 const HomePage = lazy(() => import("./pages/home"));
-const Userspage = lazy(() => import("./pages/users"));
-const ProductsPage = lazy(() => import("./pages/products"));
 const LoginPage = lazy(() => import("./pages/login"));
 const SignupPage = lazy(() => import("./pages/signup"));
+const UsersPage = lazy(() => import("./pages/users"));
+const UserPage = lazy(() => import("./pages/user"));
+const ProductsPage = lazy(() => import("./pages/products"));
 const NewItemPage = lazy(() => import("./pages/newItem"));
-const SingleItemPage = lazy(() => import("./pages/single"));
 
 const theme = createTheme({
   typography: {
@@ -34,15 +34,15 @@ const App = () => {
       <Suspense fallback={<Spinner />}>
         <Routes>
           <Route path="/" element={<HomePage />}/>
+          <Route path="/signup" element={<SignupPage />}/>
           <Route path="/login" element={<LoginPage />}/>
-          <Route path="/signup" element={<SignupPage/>}/>
           <Route path="/users">
-            <Route index element={<Userspage />} />
-            <Route path=":userId" element={<SingleItemPage />}/>
+            <Route index element={<UsersPage />} />
+            <Route path=":userId" element={<UserPage />}/>
           </Route>
           <Route path="/products">
             <Route index element={<ProductsPage />} />
-            <Route path=":productId" element={<SingleItemPage />} />
+            {/* <Route path=":productId" element={<SingleItemPage />} /> */}
             <Route path="new" element={<NewItemPage />} />
           </Route>
           <Route path="*" element={<h3>Page not found</h3>}/>

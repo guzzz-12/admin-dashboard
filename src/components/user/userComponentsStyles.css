@@ -1,0 +1,57 @@
+.user__card,
+.user__chart,
+.user__table {
+  padding: var(--spacing);
+  box-shadow: var(--card-shadow);
+  border: var(--card-border);
+}
+
+/*------------------------------*/
+/* Estilos del card del usuario */
+/*------------------------------*/
+.user__card {
+  min-width: 320px;
+  max-width: 400px;
+  flex-shrink: 0;
+}
+
+.user__card-header {
+  padding-bottom: var(--spacing);
+}
+
+.user__card-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: var(--spacing);
+}
+
+.user__card-avatar {
+  flex-shrink: 0;
+}
+
+.user__card-text {
+  overflow: hidden;
+}
+
+.user__card-name {
+  margin-bottom: var(--spacing);
+}
+
+.user__card-email,
+.user__card-phone {
+  margin-bottom: var(--spacing-sm);
+}
+
+
+/*-------------------------------*/
+/* Estilos del chart del usuario */
+/*-------------------------------*/
+.user__chart {
+  flex-grow: 1;
+}
+
+
+/*---------------------------------*/
+/* Estilos de la tabla del usuario */
+/*---------------------------------*/
