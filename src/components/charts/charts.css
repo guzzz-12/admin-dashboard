@@ -4,6 +4,8 @@
   padding: var(--spacing);
   box-shadow: var(--card-shadow);
   border: var(--card-border);
+  border-radius: 5px;
+  background-color: var(--bg-card-color);
   overflow: hidden;
 }
 
@@ -28,6 +30,8 @@
   padding: var(--spacing);
   box-shadow: var(--card-shadow);
   border: var(--card-border);
+  border-radius: 5px;
+  background-color: var(--bg-card-color);
 }
 
 .featured-chart__header {

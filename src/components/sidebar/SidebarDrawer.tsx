@@ -31,7 +31,9 @@ const SidebarDrawer = () => {
           {SidebarAccordions()}
         </Box>
         <Box className="sidebar__bottom">
-          <Typography>Theme switch</Typography>
+          <Typography variant="subtitle1" style={{opacity: 0.5}}>
+            &copy;2022 Jesús Guzmán
+          </Typography>
         </Box>
       </aside>
     </Drawer>

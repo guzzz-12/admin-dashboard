@@ -9,18 +9,16 @@
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: var(--spacing-lg);
   width: 100%;
-  margin-bottom: var(--spacing-xl);
+  margin-bottom: var(--spacing-lg);
 }
 
 .home__charts {
   display: flex;
   align-items: stretch;
   gap: var(--spacing-lg);
-  margin-bottom: var(--spacing-xl);
+  margin-bottom: var(--spacing-lg);
 }
 
 .home__transactions {
-  padding: var(--spacing-lg);
-  border: var(--card-border);
   box-shadow: var(--card-shadow);
 }

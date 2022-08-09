@@ -6,8 +6,9 @@
   flex-basis: 100%;
   padding: var(--spacing);
   box-shadow: var(--card-shadow);
-  border: var(-card-border);
+  border: var(--card-border);
   border-radius: 5px;
+  background-color: var(--bg-card-color);
 }
 
 .widget__header {

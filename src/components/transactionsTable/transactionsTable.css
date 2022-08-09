@@ -1,3 +1,18 @@
+.transactions-table {
+  border-radius: 5px;
+  border: var(--card-border);
+  background-color: var(--bg-card-color);
+}
+
+.transactions-table__container {
+  background-color: transparent;
+}
+
+.transactions-table th,
+.transactions-table td {
+  color: var(--text-color);  
+}
+
 .transactions-table__product-img {
   border: 1px solid grey;
 }

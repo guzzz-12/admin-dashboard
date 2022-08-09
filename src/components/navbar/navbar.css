@@ -3,7 +3,7 @@
   top: 0;
   left: 0;
   width: 100%;
-  background-color: white;
+  background-color: var(--bg-color);
   border-bottom: 1px solid lightgrey;
   z-index: 10;
 }
@@ -13,7 +13,7 @@
   justify-content: space-between;
   align-items: center;
   padding: var(--spacing) var(--spacing-lg);
-  background-color: white;
+  color: var(--text-color);
 }
 
 .navbar__left {
@@ -25,10 +25,22 @@
 
 .navbar__open-drawer-btn {
   display: none;
+  color: var(--text-color);
 }
 
 .navbar__logo {
   display: none;
+}
+
+.navbar__search-bar {
+  color: var(--text-color);
+  border: 1px solid lightgrey;
+  border-radius: 4px;
+  background-color: var(--bg-card-color);
+}
+
+.navbar__search-bar input {
+  color: var(--text-color);
 }
 
 .navbar__items {
@@ -38,9 +50,9 @@
   gap: var(--spacing-sm);
 }
 
-/* .navbar__icon-btn {
-  border: 1px solid #eeeded
-} */
+.navbar__icon-btn {
+  color: var(--text-color);
+}
 
 @media screen and (max-width: 900px) {
   .navbar__open-drawer-btn {

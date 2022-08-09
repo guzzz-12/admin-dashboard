@@ -2,7 +2,6 @@ import {Box, IconButton, Avatar, Badge} from "@mui/material";
 import {useSelector, useDispatch} from "react-redux";
 import {IconType} from "react-icons";
 import {TbWorld, TbBulb} from "react-icons/tb";
-import {GiExpand} from "react-icons/gi";
 import {AiOutlineBell} from "react-icons/ai";
 import {BiComment, BiMoon} from "react-icons/bi";
 import {BsListUl} from "react-icons/bs";
@@ -44,7 +43,6 @@ const NavbarItems = () => {
       >
         {mode === "light" ? <BiMoon /> : <TbBulb />}
       </IconButton>
-      {RenderIconBtn(GiExpand, null)}
       {RenderIconBtn(AiOutlineBell, 2)}
       {RenderIconBtn(BiComment, 4)}
       {RenderIconBtn(BsListUl, null)}

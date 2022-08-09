@@ -14,10 +14,12 @@ const HomePage = () => {
           return <Widget key={i} widgetData={item} />
         })}
       </Box>
+
       <Box className="home__charts">
         <FeaturedChart />
         <Chart fillMode="solid" />
       </Box>
+
       <Box className="home__transactions">
         <TransactionsTable />
       </Box>

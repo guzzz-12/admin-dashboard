@@ -18,6 +18,10 @@
   border-bottom: 1px solid lightgray;
 }
 
+.sidebar__logo {
+  color: var(--text-color);
+}
+
 .sidebar__list-wrapper {
   flex-grow: 1;
   overflow-y: auto;
@@ -32,6 +36,11 @@
   background-color: var(--scrollbar-color);
 }
 
+.sidebar__list-wrapper .MuiAccordion-root {
+  color: var(--text-color);
+  background-color: transparent;
+}
+
 .sidebar__list li {
   list-style: none;
   cursor: pointer;
@@ -39,6 +48,7 @@
 }
 
 .sidebar__list li:hover {
+  color: var(--text-light);
   background-color: #ecf3f5;
 }
 
@@ -56,6 +66,8 @@
   min-height: auto;
   margin-top: var(--spacing-sm);
   border-bottom: 1px solid lightgrey;
+  color: var(--text-color);
+  background-color: transparent;
   cursor: default;
 }
 
@@ -78,7 +90,13 @@
 .sidebar__bottom {
   padding: 1rem;
   flex-shrink: 0;
-  border-top: 1px solid rgba(0,0,0,0.25);
+  text-align: center;
+  color: var(--text-color);
+  border-top: 1px solid lightgrey;
+}
+
+.sidebar__drawer .MuiDrawer-paper {
+  background-color: var(--bg-color);
 }
 
 .sidebar--mobile {

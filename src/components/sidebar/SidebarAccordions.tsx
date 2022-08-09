@@ -54,6 +54,7 @@ const SidebarAccordions = () => {
     return (
       <Accordion
         key={i}
+        className="sidebar__accordion"
         disableGutters
         expanded={expandedIndexes.includes(i)}
         // onChange={() => onChangeHandler(i)}

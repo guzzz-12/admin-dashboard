@@ -18,7 +18,7 @@ const SearchInput = ({searchTerm, setSearchTerm}: SearchInputProps) => {
       InputProps={{
         endAdornment: (
           <IconButton size="small" disableRipple>
-            <BiSearchAlt />
+            <BiSearchAlt color="var(--text-color)" />
           </IconButton>
         )
       }}

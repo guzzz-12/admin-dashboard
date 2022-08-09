@@ -1,3 +1,18 @@
 .users__table {
   height: 100vh;
+  padding: var(--spacing-lg);
+  border-radius: 5px;
+  border: var(--card-border);
+}
+
+.users__table-datagrid {
+  color: var(--text-color);
+  background-color: var(--bg-card-color);
+}
+
+.users__table-export-btn,
+.users__table-datagrid .PrivateSwitchBase-root,
+.users__table-datagrid .MuiTablePagination-root,
+.users__table-datagrid .MuiIconButton-root {
+  color: var(--text-color);
 }

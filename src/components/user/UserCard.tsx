@@ -50,7 +50,11 @@ const UserCard = () => {
       <Box className="user__card-info">
         <Box className="user__card-avatar">
           <Avatar
-            style={{width: "120px", height: "120px"}}
+            style={{
+              width: "120px",
+              height: "120px",
+              border: "1px solid var(--text-color)"
+            }}
             src={user!.img}
             alt={user!.username}
           />

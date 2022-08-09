@@ -60,6 +60,9 @@ const Chart = ({fillMode}: ChartProps) => {
               outline: "none",
               border: "1px solid grey"
             }}
+            contentStyle={{
+              backgroundColor: "var(--bg-color)"
+            }}
           />
           <Area
             type="monotone"

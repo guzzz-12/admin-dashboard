@@ -1,10 +1,13 @@
+import { Box, Typography } from "@mui/material";
 import "./signup.css";
 
 const SignupPage = () => {
   return (
-    <div className="signup">
-      Signup page
-    </div>
+    <Box className="signup">
+      <Typography variant="h4">
+        Signup page
+      </Typography>
+    </Box>
   )
 }
 

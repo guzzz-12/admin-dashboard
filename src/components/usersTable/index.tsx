@@ -147,10 +147,10 @@ const usersColumns: GridColDef[] = [
       return (
         <Stack direction="row">
           <Button color="success" onClick={() => navigate(`/users/${userId}`)}>
-            <Typography variant="subtitle1">View</Typography>    
+            <Typography variant="subtitle1" fontWeight={700}>View</Typography>    
           </Button>
           <Button color="error" onClick={() => deleteUserHandler(userId)}>
-            <Typography variant="subtitle1">Delete</Typography>
+            <Typography variant="subtitle1" fontWeight={700}>Delete</Typography>
           </Button>
         </Stack>
       )
@@ -165,30 +165,36 @@ const usersColumns: GridColDef[] = [
       className="users__table"
     >
       <DataGrid
+        className="users__table-datagrid"
         rows={rowsData}
         columns={usersColumns}
         // components={{Toolbar: GridToolbar}}
         components={{Toolbar: () => (
           <GridToolbarContainer sx={{paddingRight: "var(--spacing)"}}>
-            <GridToolbarExport sx={{marginLeft: "auto", marginRight: "var(--spacing)"}} />
-            <Tooltip
-              title={
-                <Typography variant="subtitle1">
-                  Delete seleted
-                </Typography>
-              }
-            >
-              <span>
-                <IconButton
-                  color="error"
-                  size="small"
-                  disabled={selectedRows.length === 0}
-                  onClick={deleteSelectedHandler}
-                >
-                  <FaTrash />
-                </IconButton>
-              </span>
-            </Tooltip>
+            <GridToolbarExport
+              className="users__table-export-btn"
+              sx={{marginLeft: "auto", marginRight: "var(--spacing)"}} 
+            />
+            {selectedRows.length > 0 &&
+              <Tooltip
+                title={
+                  <Typography variant="subtitle1">
+                    Delete seleted
+                  </Typography>
+                }
+              >
+                <span>
+                  <IconButton
+                    color="error"
+                    size="small"
+                    disabled={selectedRows.length === 0}
+                    onClick={deleteSelectedHandler}
+                  >
+                    <FaTrash />
+                  </IconButton>
+                </span>
+              </Tooltip>
+            }
           </GridToolbarContainer>
         )}}
         pageSize={10}
