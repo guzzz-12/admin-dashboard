@@ -1,5 +1,6 @@
 import {useRef, useEffect, useState, ReactNode, useMemo} from "react";
 import {useSelector} from "react-redux";
+import {useLocation} from "react-router-dom";
 import {Box} from "@mui/material";
 import {LayoutState} from "../redux/store";
 import Navbar from "./navbar";
@@ -9,9 +10,13 @@ interface LayoutProps {
   children: ReactNode
 }
 
+// Rutas donde no se deben mostrar el sidebar ni el navbar
+const HIDDEN_LOCATIONS = ["/login", "/signup"];
+
 const Layout = ({children}: LayoutProps) => {
   const wrapperRef = useRef<HTMLDivElement | null>(null);
   const innerWrapperRef = useRef<HTMLDivElement | null>(null);
+  const location = useLocation();
 
   const {navbarHeight, sidebarWidth} = useSelector((state: LayoutState) => state.layout);
 
@@ -58,8 +63,13 @@ const Layout = ({children}: LayoutProps) => {
         className="inner-wrapper"
         component="div"
       >
-        <Navbar sidebarWidth={sidebarWidth} leftOffset={offset.left}/>
-        <Sidebar navbarHeight={navbarHeight} leftOffset={offset.left} />
+        {/* Ocultar el navbar y el sidebar en login y signup */}
+        {!HIDDEN_LOCATIONS.includes(location.pathname) &&
+          <>
+            <Navbar sidebarWidth={sidebarWidth} leftOffset={offset.left}/>
+            <Sidebar navbarHeight={navbarHeight} leftOffset={offset.left} />
+          </>
+        }
         <main
           style={{
             paddingLeft: `${sidebarWidth}px`,
