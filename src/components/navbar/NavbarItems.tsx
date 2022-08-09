@@ -48,7 +48,7 @@ const NavbarItems = () => {
       {RenderIconBtn(BsListUl, null)}
       <Avatar
         alt="User" 
-        src={process.env.REACT_APP_DEFAULT_AVATAR}
+        src={"https://res.cloudinary.com/dzytlqnoi/image/upload/v1615203395/default-user-img_t3xpfj.jpg"}
       />
     </Box>
   )
