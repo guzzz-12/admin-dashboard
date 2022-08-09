@@ -14,6 +14,18 @@
   --spacing-lg: calc(1.5 * var(--spacing));
   --spacing-xl: calc(3 * var(--spacing));
 
+  /* Variables de color */
+  --text-light: black;
+  --text-dark: white;
+  --bg-light: white;
+  --bg-dark: black;
+  --bg-card-light: transparent;
+  --bg-card-dark: rgba(255, 255, 255, 0.15);
+
+  --text-color: var(--text-color-light);
+  --bg-color: var(var(--bg-color-light));
+  --bg-card-color: var(--bg-card-light);
+
   --scrollbar-color: #bbbbbb;
 
   --card-shadow: 3px 3px 3px rgba(0,0,0,0.25);
@@ -26,6 +38,8 @@ html {
 
 body {
   margin: 0;
+  color: var(--text-color);
+  background-color: var(--bg-color);
 }
 
 * {
