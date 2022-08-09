@@ -191,8 +191,8 @@ const usersColumns: GridColDef[] = [
             </Tooltip>
           </GridToolbarContainer>
         )}}
-        pageSize={8}
-        rowsPerPageOptions={[8]}
+        pageSize={10}
+        rowsPerPageOptions={[10]}
         page={page}
         localeText={localization}
         checkboxSelection
