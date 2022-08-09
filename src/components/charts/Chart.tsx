@@ -35,7 +35,7 @@ const Chart = ({fillMode}: ChartProps) => {
       <Typography className="chart__title" variant="h5">
         Last 7 months revenue
       </Typography>
-      <ResponsiveContainer width="100%" height="100%">
+      <ResponsiveContainer className="chart__container" width="100%" height="100%">
         <AreaChart
           style={{paddingTop:"var(--spacing-lg)", fontFamily: "Nunito"}}
           data={CHART_DATA}

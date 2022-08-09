@@ -17,6 +17,10 @@
   text-align: center;
 }
 
+.chart__container {
+  min-height: 400px;
+}
+
 /*----------------------------*/
 /* Estilos del featured chart */
 /*----------------------------*/
