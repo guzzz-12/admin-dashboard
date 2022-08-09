@@ -49,7 +49,7 @@ const Layout = ({children}: LayoutProps) => {
       resizeObserver.observe(element);
     }
 
-    () => resizeObserver.unobserve(element);
+    return () => resizeObserver.unobserve(element);
   }, [wrapperRef]);
 
   return (
