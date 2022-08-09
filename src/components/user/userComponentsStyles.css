@@ -17,10 +17,12 @@
 
 .user__card-header {
   padding-bottom: var(--spacing);
+  text-align: left;
 }
 
 .user__card-info {
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
   align-items: flex-start;
   gap: var(--spacing);
@@ -41,6 +43,22 @@
 .user__card-email,
 .user__card-phone {
   margin-bottom: var(--spacing-sm);
+}
+
+@media screen and (max-width: 1000px) {
+  .user__card {
+    margin: 0 auto;
+  }
+
+  .user__card-header {
+    text-align: center;
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .user__card-info {
+    justify-content: center;
+    gap: var(--spacing-xl);
+  }
 }
 
 

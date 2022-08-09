@@ -140,16 +140,24 @@ const usersColumns: GridColDef[] = [
   {
     field: "action",
     headerName: "Action",
-    flex: 1,
+    flex: 2,
     align: "center",
     renderCell: (params: GridRenderCellParams) => {
       const userId = params.row.id as string;
       return (
-        <Stack direction="row">
-          <Button color="success" onClick={() => navigate(`/users/${userId}`)}>
+        <Stack className="users__table-actions">
+          <Button
+            color="success"
+            size="small"
+            onClick={() => navigate(`/users/${userId}`)}
+          >
             <Typography variant="subtitle1" fontWeight={700}>View</Typography>    
           </Button>
-          <Button color="error" onClick={() => deleteUserHandler(userId)}>
+          <Button
+            color="error"
+            size="small"
+            onClick={() => deleteUserHandler(userId)}
+          >
             <Typography variant="subtitle1" fontWeight={700}>Delete</Typography>
           </Button>
         </Stack>

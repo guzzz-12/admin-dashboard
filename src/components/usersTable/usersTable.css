@@ -16,3 +16,11 @@
 .users__table-datagrid .MuiIconButton-root {
   color: var(--text-color);
 }
+
+.users__table-actions {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 0;
+}

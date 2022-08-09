@@ -7,8 +7,15 @@
 
 .user__top {
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
   align-items: stretch;
   gap: var(--spacing-lg);
   margin-bottom: var(--spacing-lg);
+}
+
+@media screen and (max-width: 1000px) {
+  .user__top {
+    flex-direction: column;
+  }
 }
