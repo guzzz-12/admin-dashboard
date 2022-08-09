@@ -1,6 +1,7 @@
 import {configureStore} from "@reduxjs/toolkit";
 import {layoutReducer} from "./features/layoutSlice";
 import {drawerReducer} from "./features/drawerSlice";
+import {Modes, themeReducer} from "./features/themeSlice";
 
 export interface LayoutState {
   layout: {
@@ -9,9 +10,16 @@ export interface LayoutState {
   },
 }
 
+export interface ThemeState {
+  theme: {
+    mode: Modes
+  }
+}
+
 export const store = configureStore({
   reducer: {
     layout: layoutReducer,
-    drawer: drawerReducer
+    drawer: drawerReducer,
+    theme: themeReducer
   }
 });
