@@ -2,6 +2,7 @@ import {Suspense, lazy} from "react";
 import {Routes, Route} from "react-router-dom";
 import {createTheme, ThemeProvider} from "@mui/material";
 import Spinner from "./components/Spinner";
+import ThemeSwitch from "./components/ThemeSwitch";
 import "./App.css";
 
 const HomePage = lazy(() => import("./pages/home"));
@@ -31,6 +32,7 @@ const theme = createTheme({
 const App = () => {
   return (
     <ThemeProvider theme={theme}>
+      <ThemeSwitch />
       <Suspense fallback={<Spinner />}>
         <Routes>
           <Route path="/" element={<HomePage />}/>
