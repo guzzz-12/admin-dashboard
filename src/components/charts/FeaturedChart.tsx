@@ -22,7 +22,7 @@ const FeaturedChart = () => {
             pathColor: "cornflowerblue",
             strokeLinecap: "butt"
           })}
-          value={70} 
+          value={70}
           strokeWidth={5}
         >
           <Typography variant="h2">
@@ -30,7 +30,6 @@ const FeaturedChart = () => {
           </Typography>
         </CircularProgressbarWithChildren>
       </Box>
-
       <Box className="featured-chart__progress-info">
         <Typography fontWeight={700}>
           Total sales made today
@@ -39,7 +38,6 @@ const FeaturedChart = () => {
           $420
         </Typography>
       </Box>
-
       <Box className="featured-chart__progress-desc">
         <Typography variant="subtitle1" fontWeight={700} lineHeight={1.2}>
           Previous transactions are still being processed.
