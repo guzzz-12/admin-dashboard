@@ -1,0 +1,15 @@
+.right-sidebar {
+  position: fixed;
+  display: none;
+  top: 0;
+  height: 100vh;
+  padding: 0 var(--spacing-sm);
+  border-left: 1px solid lightgray;
+  z-index: 0;
+}
+
+@media screen and (max-width: 800px) {
+  .right-sidebar  {
+    display: block;
+  }
+}
