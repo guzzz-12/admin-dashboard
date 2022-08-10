@@ -5,6 +5,7 @@ import {Box} from "@mui/material";
 import {LayoutState} from "../redux/store";
 import Navbar from "./navbar";
 import Sidebar from "./sidebar";
+import RightSidebar from "./rightSidebar";
 
 interface LayoutProps {
   children: ReactNode
@@ -18,7 +19,7 @@ const Layout = ({children}: LayoutProps) => {
   const innerWrapperRef = useRef<HTMLDivElement | null>(null);
   const location = useLocation();
 
-  const {navbarHeight, sidebarWidth} = useSelector((state: LayoutState) => state.layout);
+  const {navbarHeight, sidebarWidth, rightSidebarWidth} = useSelector((state: LayoutState) => state.layout);
 
   const [offset, setOffset] = useState<{left: number, right: number}>({
     left: 0,
@@ -68,12 +69,14 @@ const Layout = ({children}: LayoutProps) => {
           <>
             <Navbar sidebarWidth={sidebarWidth} leftOffset={offset.left}/>
             <Sidebar navbarHeight={navbarHeight} leftOffset={offset.left} />
+            <RightSidebar navbarHeight={navbarHeight} rightOffset={offset.right} />
           </>
         }
         <main
           style={{
+            paddingTop: `${navbarHeight}px`,
             paddingLeft: `${sidebarWidth}px`,
-            paddingTop: `${navbarHeight}px`
+            paddingRight: `${rightSidebarWidth}px`
           }}
         >
           {children}

@@ -32,6 +32,11 @@
   display: none;
 }
 
+.navbar__logo a {
+  text-decoration: none;
+  color: inherit;
+}
+
 .navbar__search-bar {
   color: var(--text-color);
   border: 1px solid lightgrey;
@@ -49,6 +54,7 @@
 
 .navbar__items {
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
   align-items: center;
   gap: var(--spacing-sm);
@@ -81,6 +87,10 @@
 @media screen and (max-width: 800px) {
   .navbar__items-wrapper {
     display: none;
+  }
+
+  .navbar__items {
+    flex-direction: column;
   }
 
   .navbar__items-mobile-options-btn {

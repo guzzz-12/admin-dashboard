@@ -1,8 +1,8 @@
 import {useEffect, useState, useRef, MutableRefObject} from "react";
+import {Link} from "react-router-dom";
 import {useDispatch} from "react-redux";
-import {Box, Typography, IconButton, Menu, MenuItem} from "@mui/material";
+import {Box, Typography, IconButton} from "@mui/material";
 import {AiOutlineMenu} from "react-icons/ai";
-import {BiChevronDownCircle} from "react-icons/bi";
 import SearchInput from "./SearchInput";
 import NavbarItems from "./NavbarItems";
 import useResizeObserver from "../../hooks/useResizeObserver";
@@ -20,7 +20,6 @@ const Navbar = ({sidebarWidth, leftOffset}: NavbarProps) => {
   const dispatch = useDispatch();
 
   const [searchTerm, setSearchTerm] = useState<string>("");
-  const [anchorElement, setAnchorElement] = useState<HTMLElement | null>(null);
   
   // Detectar los cambios en el height del navbar
   const {elemHeight: navbarHeight} = useResizeObserver({
@@ -52,7 +51,7 @@ const Navbar = ({sidebarWidth, leftOffset}: NavbarProps) => {
           </IconButton>
           <Box className="navbar__logo">
             <Typography variant="h4">
-              Logo
+              <Link to="/">Logo</Link>
             </Typography>
           </Box>
           <SearchInput
@@ -64,25 +63,6 @@ const Navbar = ({sidebarWidth, leftOffset}: NavbarProps) => {
         <Box className="navbar__items-wrapper">
           <NavbarItems />
         </Box>
-
-        <IconButton
-          className="navbar__items-mobile-options-btn"
-          size="large"
-          onClick={(e) => setAnchorElement(e.currentTarget)}
-        >
-          <BiChevronDownCircle />
-        </IconButton>
-
-        <Menu
-          className="navbar__items-mobile-options-menu"
-          open={!!anchorElement}
-          anchorEl={anchorElement}
-          onClose={() => setAnchorElement(null)}
-        >
-          <MenuItem onClick={() => setAnchorElement(null)}>
-            <NavbarItems />
-          </MenuItem>
-        </Menu>
       </Box>
     </nav>
   )

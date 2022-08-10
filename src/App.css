@@ -23,7 +23,7 @@
   --bg-card-dark: rgba(255, 255, 255, 0.15);
 
   --text-color: var(--text-color-light);
-  --bg-color: var(var(--bg-color-light));
+  --bg-color: var(--bg-color-light);
   --bg-card-color: var(--bg-card-light);
 
   --scrollbar-color: #bbbbbb;
