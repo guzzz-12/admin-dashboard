@@ -7,6 +7,7 @@ export interface LayoutState {
   layout: {
     navbarHeight: number;
     sidebarWidth: number;
+    rightSidebarWidth: number;
   },
 }
 
