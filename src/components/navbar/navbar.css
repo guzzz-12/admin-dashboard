@@ -85,6 +85,15 @@
 }
 
 @media screen and (max-width: 800px) {
+  .navbar__left {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .navbar__search-bar {
+    margin-left: auto;
+  }
+
   .navbar__items-wrapper {
     display: none;
   }
