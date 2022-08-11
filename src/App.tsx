@@ -1,6 +1,5 @@
 import {Suspense, lazy} from "react";
 import {Routes, Route} from "react-router-dom";
-import {createTheme, ThemeProvider} from "@mui/material";
 import Spinner from "./components/Spinner";
 import ThemeSwitch from "./components/ThemeSwitch";
 import "./App.css";
@@ -13,25 +12,9 @@ const UserPage = lazy(() => import("./pages/user"));
 const ProductsPage = lazy(() => import("./pages/products"));
 const NewItemPage = lazy(() => import("./pages/newItem"));
 
-const theme = createTheme({
-  typography: {
-    h1: {fontSize: "var(--heading-1)"},
-    h2: {fontSize: "var(--heading-2)"},
-    h3: {fontSize: "var(--heading-3)"},
-    h4: {fontSize: "var(--heading-4)"},
-    h5: {fontSize: "var(--heading-5)"},
-    body1: {fontSize: "var(--paragraph)"},
-    button: {fontSize: "var(--paragraph)"},
-    subtitle1: {fontSize: "var(--text-small)"},
-    allVariants: {
-      fontFamily: "Nunito, sans-serif"
-    }
-  }
-});
-
 const App = () => {
   return (
-    <ThemeProvider theme={theme}>
+    <>
       <ThemeSwitch />
       <Suspense fallback={<Spinner />}>
         <Routes>
@@ -50,7 +33,7 @@ const App = () => {
           <Route path="*" element={<h3>Page not found</h3>}/>
         </Routes>
       </Suspense>
-    </ThemeProvider>
+    </>
   );
 }
 
