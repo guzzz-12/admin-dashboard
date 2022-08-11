@@ -11,6 +11,7 @@ const UsersPage = lazy(() => import("./pages/users"));
 const UserPage = lazy(() => import("./pages/user"));
 const ProductsPage = lazy(() => import("./pages/products"));
 const NewItemPage = lazy(() => import("./pages/newItem"));
+const NotFoundPage = lazy(() => import("./pages/notFound"));
 
 const App = () => {
   return (
@@ -30,7 +31,7 @@ const App = () => {
             {/* <Route path=":productId" element={<SingleItemPage />} /> */}
             <Route path="new" element={<NewItemPage />} />
           </Route>
-          <Route path="*" element={<h3>Page not found</h3>}/>
+          <Route path="*" element={<NotFoundPage />}/>
         </Routes>
       </Suspense>
     </>
