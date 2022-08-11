@@ -17,7 +17,7 @@ const HomePage = () => {
 
       <Box className="home__charts">
         <FeaturedChart />
-        <Chart fillMode="solid" />
+        <Chart chartType="bar" fillMode="solid" />
       </Box>
 
       <Box className="home__transactions">

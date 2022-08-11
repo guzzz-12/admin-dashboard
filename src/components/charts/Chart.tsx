@@ -1,5 +1,7 @@
 import {Box, Typography} from "@mui/material";
 import {
+  BarChart,
+  Bar,
   AreaChart,
   Area,
   XAxis,
@@ -16,6 +18,7 @@ interface Chart {
 }
 
 interface ChartProps {
+  chartType: "bar" | "area";
   fillMode: "solid" | "gradient"
 }
 
@@ -29,52 +32,85 @@ const CHART_DATA: Chart[] = [
   {name: "July", total: 1200}
 ];
 
-const Chart = ({fillMode}: ChartProps) => {
+const Chart = ({chartType, fillMode}: ChartProps) => {
   return (
     <Box className="chart">
       <Typography className="chart__title" variant="h5">
         Last 7 months revenue
       </Typography>
       <ResponsiveContainer className="chart__container" width="100%" height="100%">
-        <AreaChart
-          style={{paddingTop:"var(--spacing-lg)", fontFamily: "Nunito"}}
-          data={CHART_DATA}
-          width={100}
-          height={100}
-          margin={{ top: 10, right: 30, left: 0, bottom: 0 }}
-        >
-          {fillMode === "gradient" &&
-            <defs>
-              <linearGradient id="total" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%" stopColor="cornflowerblue" stopOpacity={0.8}/>
-                <stop offset="100%" stopColor="#fff" stopOpacity={0}/>
-              </linearGradient>
-            </defs>
-          }
-          <XAxis dataKey="name" />
-          <YAxis />
-          <CartesianGrid strokeDasharray="4 4" />
-          <Tooltip
-            wrapperStyle={{
-              textTransform: "capitalize",
-              outline: "none",
-              border: "1px solid grey"
-            }}
-            contentStyle={{
-              backgroundColor: "var(--bg-color)"
-            }}
-          />
-          <Area
-            type="monotone"
-            dataKey="total"
-            stroke="cornflowerblue"
-            strokeWidth={2}
-            fillOpacity={fillMode === "gradient" ? 1 : 0.5}
-            fill={fillMode === "gradient" ? "url(#total)" : "cornflowerblue"}
-            // fill="cornflowerblue"
-            // fill="url(#total)"
-          />
-        </AreaChart>
+        {chartType === "bar" ?
+          <BarChart
+            style={{paddingTop:"var(--spacing-lg)", fontFamily: "Nunito"}}
+            data={CHART_DATA}
+            width={100}
+            height={100}
+            margin={{ top: 10, right: 30, left: 0, bottom: 0 }}
+          >
+            <XAxis dataKey="name" />
+            <YAxis />
+            <CartesianGrid strokeDasharray="4 4" />
+            <Bar
+              dataKey="total"
+              fill="cornflowerblue"
+              opacity={0.75}
+              stroke="cornflowerblue"
+              strokeWidth={1}
+            />
+            <Tooltip
+              wrapperStyle={{
+                textTransform: "capitalize",
+                outline: "none",
+                border: "1px solid grey"
+              }}
+              contentStyle={{
+                backgroundColor: "var(--bg-color)"
+              }}
+            />
+          </BarChart>
+
+          :
+
+          <AreaChart
+            style={{paddingTop:"var(--spacing-lg)", fontFamily: "Nunito"}}
+            data={CHART_DATA}
+            width={100}
+            height={100}
+            margin={{ top: 10, right: 30, left: 0, bottom: 0 }}
+          >
+            {fillMode === "gradient" &&
+              <defs>
+                <linearGradient id="total" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stopColor="cornflowerblue" stopOpacity={0.8}/>
+                  <stop offset="100%" stopColor="#fff" stopOpacity={0}/>
+                </linearGradient>
+              </defs>
+            }
+            <XAxis dataKey="name" />
+            <YAxis />
+            <CartesianGrid strokeDasharray="4 4" />
+            <Tooltip
+              wrapperStyle={{
+                textTransform: "capitalize",
+                outline: "none",
+                border: "1px solid grey"
+              }}
+              contentStyle={{
+                backgroundColor: "var(--bg-color)"
+              }}
+            />
+            <Area
+              type="monotone"
+              dataKey="total"
+              stroke="cornflowerblue"
+              strokeWidth={2}
+              fillOpacity={fillMode === "gradient" ? 1 : 0.5}
+              fill={fillMode === "gradient" ? "url(#total)" : "cornflowerblue"}
+              // fill="cornflowerblue"
+              // fill="url(#total)"
+            />
+          </AreaChart>
+        }
       </ResponsiveContainer>
     </Box>
   )
