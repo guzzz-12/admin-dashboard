@@ -1,5 +1,5 @@
 import {useState} from "react";
-import {Link} from "react-router-dom";
+import {Link, NavLink} from "react-router-dom";
 import {Accordion, AccordionDetails, AccordionSummary, Typography} from "@mui/material";
 import {AiOutlineBarChart, AiOutlineBell, AiOutlineCreditCard, AiOutlineDashboard, AiOutlineUser, AiOutlineLogout} from "react-icons/ai";
 import {HiOutlineTruck, HiTemplate} from "react-icons/hi";
@@ -14,21 +14,21 @@ const SidebarAccordions = () => {
     {title: "lists", links: [
       {text: "Users", path: "/users", Icon: AiOutlineUser},
       {text: "Products", path: "/products", Icon: HiTemplate},
-      {text: "Orders", path: "/", Icon: AiOutlineCreditCard},
-      {text: "Delivery", path: "/", Icon: HiOutlineTruck}
+      {text: "Orders", path: "/orders", Icon: AiOutlineCreditCard},
+      {text: "Delivery", path: "/delivery", Icon: HiOutlineTruck}
     ]},
     {title: "useful", links: [
-      {text: "Stats", path: "/", Icon: AiOutlineBarChart},
-      {text: "Notifications", path: "/", Icon: AiOutlineBell}
+      {text: "Stats", path: "/stats", Icon: AiOutlineBarChart},
+      {text: "Notifications", path: "/notifications", Icon: AiOutlineBell}
     ]},
     {title: "service", links: [
-      {text: "System health", path: "/", Icon: MdOutlineHealthAndSafety},
-      {text: "Logs", path: "/", Icon: BsCardChecklist},
-      {text: "Settings", path: "/", Icon: MdSettings}
+      {text: "System health", path: "/system-status", Icon: MdOutlineHealthAndSafety},
+      {text: "Logs", path: "/logs", Icon: BsCardChecklist},
+      {text: "Settings", path: "/settings", Icon: MdSettings}
     ]},
     {title: "user", links: [
-      {text: "Profile", path: "/", Icon: BiUserCircle},
-      {text: "Logout", path: "/", Icon: AiOutlineLogout}
+      {text: "Profile", path: "/profile", Icon: BiUserCircle},
+      {text: "Logout", path: "/logout", Icon: AiOutlineLogout}
     ]}
   ];
 
@@ -73,12 +73,17 @@ const SidebarAccordions = () => {
             {item.links.map(({text, path, Icon}, i) => {
               return (
                 <li key={i}>
-                  <Link className="sidebar__link" to={path}>
+                  <NavLink
+                    to={path}
+                    className={({isActive}) => {
+                      return isActive ? "sidebar__link sidebar__link--active" : "sidebar__link";
+                    }}
+                  >
                     <Icon fontSize="18px" color="cornflowerblue" />
                     <Typography variant="body1">
                       {text}
                     </Typography>
-                  </Link>
+                  </NavLink>
                 </li>
               )
             })}            

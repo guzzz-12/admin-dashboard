@@ -43,23 +43,25 @@
 
 .sidebar__list li {
   list-style: none;
-  cursor: pointer;
-  transition: all 200ms;
 }
 
-.sidebar__list li:hover {
-  color: var(--text-light);
-  background-color: #ecf3f5;
-}
-
-.sidebar__list a {
+.sidebar__link {
   display: flex;
   justify-content: flex-start;
   align-items: center;
   gap: var(--spacing-sm);
   padding: var(--spacing-sm);
   text-decoration: none;
-  color: inherit;
+  color: var(--text-color);
+  cursor: pointer;
+  background-color: transparent;
+  transition: all 200ms;
+}
+
+.sidebar__link:hover,
+.sidebar__link--active {
+  color: var(--text-light);
+  background-color: #ecf3f5;
 }
 
 .sidebar__accordion-title {
