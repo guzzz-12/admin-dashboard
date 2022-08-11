@@ -1,0 +1,26 @@
+.not-found {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.not-found__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: var(--spacing-lg);
+  max-width: 600px;
+  padding: calc(var(--spacing-lg) * 2);
+  border: 1px solid lightgray;
+  border-radius: 10px;
+  box-shadow: var(--card-shadow);
+}
+
+.not-found__icon {
+  font-size: 200px;
+}
+
+.not-found__text {
+  text-align: center;
+}
